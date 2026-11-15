@@ -65,7 +65,7 @@ export class Dog {
    * @return A message indicating that the dog learned a new trick.
    */
   learnTrick(trick: string): string {
-    if (trick === null || trick === "") {
+    if (!trick?.trim()) {
       throw new Error("Trick cannot be empty");
     }
     this.tricks.push(trick);
